@@ -11,6 +11,7 @@ export const Nav = () => {
     return (
         <nav>
             <Flex
+            
                 borderBottom={1}
                 borderStyle={"solid"}
                 // borderColor={useBorderColors().nav}
@@ -20,8 +21,7 @@ export const Nav = () => {
                 <Flex
                     flex={{ base: 1 }}
                     alignItems={"center"}
-                    minH={"60px"}
-                    py={{ base: 2 }}
+                    py={{ base: 3 }}
                     px={{ base: 4 }}
                     maxW={"7xl"}
                 >
@@ -51,7 +51,7 @@ const DesktopNav = () => {
         <Stack direction="row" spacing={12}>
             {links.map(link => <TextLink
                 as={NavLink}
-                px={0}
+                p={0}
                 fontWeight="semibold"
                 key={link.title}
                 to={link.to}
@@ -125,6 +125,6 @@ const MobileNavItem = ({ title, to, onItemClicked }) => {
 const LogoutLink = ({...props}) => {
 
     return (
-        <TextLink to="/logout" title="log out" textDecoration="underline" {...props} />
+        <TextLink p={0} to="/logout" title="log out" textDecoration="underline" {...props} />
     )
 }

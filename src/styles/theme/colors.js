@@ -29,11 +29,13 @@ import {
   };
   
   const useTextColors = () => {
-    const defaultColor = useColorModeValue("gray.800", "gray.200");
+    const primaryColor = useColorModeValue("gray.800", "gray.200");
+    const secondaryColor = useColorModeValue("gray.500", "gray.300");
     const darkColor = useColorModeValue("gray.800", "gray.900")
   
     return {
-      default: defaultColor,
+      primary: primaryColor,
+      secondary: secondaryColor,
       dark: darkColor
     };
   };
@@ -43,16 +45,16 @@ import {
     const subNavBg = useColorModeValue("gray.700", "gray.800");
     const mainBg = useColorModeValue("gray.100", "gray.800");
     const footerBg = useColorModeValue("gray.600", "gray.900");
-    const cardFooterBg = useColorModeValue("gray.200", "gray.600");
-    const goodBg = useColorModeValue("green.200", "green.200");
+    const cardBg = useColorModeValue("white", "green.700");
+    const cardHoverBg = useColorModeValue("gray.100", "green.600");
   
     return {
       default: mainBg,
       nav: navBg,
-      cardFooter: cardFooterBg,
-      good: goodBg,
       subNav: subNavBg,
       footer: footerBg,
+      card: cardBg,
+      cardHover: cardHoverBg
     };
   };
   
