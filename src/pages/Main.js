@@ -1,10 +1,12 @@
 import { Container, Flex } from "@chakra-ui/react"
 import { Outlet } from "react-router-dom"
+import { Nav } from "./Nav"
 
 
 export const Main = () => {
     return (
-        <Flex>
+        <Flex direction="column" width="100%">
+            <Nav />
             <Container
                 maxW={"7xl"}
                 px={4}
