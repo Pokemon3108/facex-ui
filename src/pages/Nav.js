@@ -1,5 +1,5 @@
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { Collapse, Flex, IconButton, LinkBox, Stack, Text, useDisclosure } from "@chakra-ui/react"
+import { Collapse, Divider, Flex, IconButton, LinkBox, Stack, Text, useDisclosure } from "@chakra-ui/react"
 import { Link } from "components/links/Link";
 import { links } from "components/links/links";
 import { TextLink } from "components/links/TextLink";
@@ -29,6 +29,7 @@ export const Nav = () => {
                         <DesktopNav />
                     </Flex>
                     <Flex flex={{ base: "auto" }} justify={{ base: "end" }}>
+                        <LogoutLink display={{base: "none", md: "flex"}} />
                         <MobileNavBurger
                             display={{ base: "flex", md: "none" }}
                             isOpen={isOpen}
@@ -80,6 +81,13 @@ const MobileNav = ({ onItemClicked, ...other }) => {
                     {...link}
                 />
             ))}
+            <Divider />
+            <MobileNavItem
+                    key={"logout"}
+                    onItemClicked={onItemClicked}
+                    to="/logout"
+                    title="log out"
+                />
         </Stack>
     );
 };
@@ -113,3 +121,10 @@ const MobileNavItem = ({ title, to, onItemClicked }) => {
         </Link>
     );
 };
+
+const LogoutLink = ({...props}) => {
+
+    return (
+        <TextLink to="/logout" title="log out" textDecoration="underline" {...props} />
+    )
+}
